@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-md-4">
+    <ul class="list-inline">
+      <li>
+        <span class="firstText">User Name :</span> {{userName}}</li>
+      <li>
+        <span class="firstText">Name :</span> {{name}}</li>
+      <li>
+        <span class="firstText">Email :</span> {{email}}</li>
+      <li>
+        <span class="firstText">Mobile Number :</span> {{mobileNumber}}</li>
+      <li>
+        <span class="firstText">Address:</span> {{address}}</li>
+    </ul>
+  </div>
+  <div class="form-group">
+    <button [disabled]="loading" class="btn btn-primary" (click)="back()">Back</button>
+  </div>
+
+</div>

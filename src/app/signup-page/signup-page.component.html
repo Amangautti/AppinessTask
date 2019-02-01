@@ -1,0 +1,48 @@
+<div class="col-md-6 col-md-offset-3">
+    <h2>Please enter the following details:</h2>
+    <form name="form" (ngSubmit)="f.form.valid && registerUser(userInterface)" #f="ngForm" novalidate>
+        <div class="form-group">
+            <label for="userName">User Name</label>
+            <input type="text" class="form-control" maxlength="20" name="userName" [(ngModel)]="userInterface.userName" #userName="ngModel" required />
+            <div *ngIf="f.submitted && !userName.valid" class="help-block">User Name is required</div>
+        </div>
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" maxlength="50" name="name" [(ngModel)]="userInterface.name" #name="ngModel" required />
+            <div *ngIf="f.submitted && !name.valid" class="help-block">Name is required</div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control" [pattern]="emailPattern" name="email" [(ngModel)]="userInterface.email" #email="ngModel" required />
+            <div *ngIf="f.submitted && !email.valid" class="help-block">Email is required</div>
+            <!--<div *ngIf="email.errors.pattern">Email is not valid</div>-->
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" minlength="8" maxlength="20" name="password" [(ngModel)]="userInterface.password" #password="ngModel" required />
+            <div *ngIf="f.submitted && !password.valid" class="help-block">Password is required</div>
+        </div>
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input type="password" class="form-control" minlength="8" maxlength="20" name="confirmPassword" [(ngModel)]="userInterface.confirmPassword" #confirmPassword="ngModel"
+                required />
+            <div *ngIf="f.submitted && !confirmPassword.valid" class="help-block">Confirm Password is required</div>
+        </div>
+        <div class="form-group">
+            <label for="mobileNumber">Mobile Number</label>
+            <input type="text" class="form-control" minlength="10" maxlength="10" name="mobileNumber" [(ngModel)]="userInterface.mobileNumber" #mobileNumber="ngModel" required
+            />
+            <div *ngIf="f.submitted && !mobileNumber.valid" class="help-block">Mobile Number is required</div>
+            <!--<div *ngIf="mobileNumber.errors.pattern">Please enter valid 10 digit number</div>-->
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" class="form-control" maxlength="100" name="address" [(ngModel)]="userInterface.address" #address="ngModel" required />
+            <div *ngIf="f.submitted && !address.valid" class="help-block">Password is required</div>
+        </div>
+        <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary">Register</button>
+            <button [disabled]="loading" class="btn btn-primary">Cancel</button>
+        </div>
+    </form>
+</div>
